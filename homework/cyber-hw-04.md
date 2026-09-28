@@ -1,18 +1,18 @@
-|| **Control Number:** || I
+**Control Number:** I
 
-|| **Control Name:** ||
+**Control Name:** I
 
-|| **Default State:** ||
+**Default State:** I
 
-|| **Hardened State:** ||
+**Hardened State:** I
 
-|| **Implementation Method:** ||
+**Implementation Method:** I
 
-|| **Registry/GPO Path:** ||
+**Registry/GPO Path:** I
 
-|| **How to Verify:** ||
+**How to Verify:** I
 
-|| **Security Impact:** ||
+**Security Impact:** I
 
-|| **Operational Impact:** ||
+**Operational Impact:** I
 
