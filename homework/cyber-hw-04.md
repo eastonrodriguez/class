@@ -6,9 +6,10 @@
 
 **Hardened State:** LmCompatibilityLevel = 5
 
-**Implementation Method:** I
+**Implementation Method:** Create a group policy setting that applies to the Servers OU, then force those computers to immediately check for the new policy through gpupdate /force
 
-**Registry/GPO Path:** I
+**Registry/GPO Path:** HKLM:\SYSTEM\CurrentControlSet\Control\Lsa\LmCompatibilityLevel = 5 (DWORD)
+GPO: Computer Configuration > Windows Settings > Security Settings > Local Policies > Security Options > Network security: LAN Manager authentication level
 
 **How to Verify:** I
 
