@@ -303,3 +303,6 @@ There is no registry key for this. The SACL is stored on the NTFS folder itself.
 **Security Impact:** Without NLA, anyone who can reach the server over the network gets a full Windows login screen before proving who they are. This lets attackers guess passwords, and it uses up server memory and CPU for each connection, which can be used to slow or crash the server. NLA makes the client log in first, so unauthenticated attackers never get that far. It also protects against some RDP flaws that can be used before login, and it makes it harder to steal credentials in a man-in-the-middle attack.
 
 **Operational Impact:** Very old RDP clients that can't do NLA will be refused. Modern Windows, Mac, and most current clients work fine. Users also can't use the option to change an expired password at the RDP login screen the same way, so they may need to change it another way. The client computer must be able to reach a domain controller to check logins, which can cause problems for computers that are not joined to the domain.
+
+---
+
