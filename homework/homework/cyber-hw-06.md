@@ -27,3 +27,6 @@ TOTP is the best fit for routine access because it keeps working during outages.
 
 # Recommendation 2: The CISO and IT Director use FIDO2 hardware keys for break-glass access
 Break-glass access is the highest impact path, since it bypasses normal workflow and gives full access to systems holding peoples data. A compromised credential would be a reportable HIPAA incident, so a stronger, phishing-resistant method is justified for just two people. Hardware keys also work when the identity systems have failed, because they need only the key, a PIN, and a physical touch. Using separate local accounts for each person keeps access available even if the directory is down or compromised, and makes every break-glass login easy to identify and alert on. Finally, each person holds a primary key and a sealed backup, and opening the backup is a logged event witnessed by the other officer, which fits the governance of the two roles.
+
+# Part 2
+
