@@ -21,3 +21,9 @@
 * **Cost per user** Around $4 per month for push apps.
 * **Works with SSH** Yes, but via add-ons. Such as pam_duo for Duo. They add a runtime dependency on a third-party service in the login path of every server.
 * **Regulatory compliance** For NIST it cannot reach AAL3 since it uses an out-of-band authenticator through an app. For HIPPA there should be few issues but just have to make sure you do your due diligence for the vendor of the app.
+
+# Recommendation 1: Sysadmins use TOTP
+TOTP is the best fit for routine access because it keeps working during outages. It doesn’t rely on the internet, a vendor cloud, or the domain controller, so sysadmins can still log in when other systems are down. Since SSH is only reachable from a restricted management network, the phishing risk is already low, and combining an SSH key with a TOTP code gives two separate factors. It’s also free, needs no new vendor or hardware, and suits a small team. Service accounts can skip the MFA prompt through a simple key-only configuration with source and command restrictions.
+
+# Recommendation 2: The CISO and IT Director use FIDO2 hardware keys for break-glass access
+Break-glass access is the highest impact path, since it bypasses normal workflow and gives full access to systems holding peoples data. A compromised credential would be a reportable HIPAA incident, so a stronger, phishing-resistant method is justified for just two people. Hardware keys also work when the identity systems have failed, because they need only the key, a PIN, and a physical touch. Using separate local accounts for each person keeps access available even if the directory is down or compromised, and makes every break-glass login easy to identify and alert on. Finally, each person holds a primary key and a sealed backup, and opening the backup is a logged event witnessed by the other officer, which fits the governance of the two roles.
