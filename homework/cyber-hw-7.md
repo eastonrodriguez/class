@@ -16,8 +16,5 @@ Meridian's data center runs core banking, trading, and customer data, but it isn
 3. Eaton, "Maximizing UPS Availability": https://www.voltimum.co.uk/pdf-catalogues/eaton-maximizing-ups-availability?page=2
 4. NREL, *Emergency Diesel Generator Reliability and Installation Energy Security*, NREL/TP-5C00-76553 (2020): https://www.nrel.gov/docs/fy20osti/76553.pdf
 5. Data Center Knowledge, "Generators Are Key to Improving Reliability": https://www.datacenterknowledge.com/node/60676
-6. ASHRAE TC 9.9 recommended inlet range: 18-27°C (64.4-80.6°F)
-7. Uptime Institute tier availability targets from the assignment tip
-8. Meridian Financial Services Data Center Site Survey Findings
 
 
