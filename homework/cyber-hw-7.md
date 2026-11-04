@@ -17,19 +17,19 @@ Meridian's data center runs core banking, trading, and customer data, but it isn
 
 | ID | Category | Description | L | I | Score | Current Controls | Recommended Control | Cost |
 |---|---|---|---|---|---|---|---|---|
-| R-01 | Power | Generator is 200 kW but the facility uses 306 kW | 4 | 5 | 20 (Critical)[^1] | One generator, 72 h fuel | Replace with N+1 generators sized for 306 kW at 80% load or less | High |
-| R-02 | Power | Two 80 kVA UPS units (160 kVA) can't carry the 180 kW IT load | 4 | 5 | 20 (Critical)[^2] | Two UPS units, A/B feeds | Resize so either side carries the full load | High |
-| R-03 | Power | Only one utility feed | 3 | 5 | 15 (Critical)[^3] | Generator | Add a second feed or a backup site | High |
+| R-01 | Power | Generator is 200 kW but the facility uses 306 kW | 4 | 5 | 20 (Critical) | One generator, 72 h fuel | Replace with N+1 generators sized for 306 kW at 80% load or less | High |
+| R-02 | Power | Two 80 kVA UPS units (160 kVA) can't carry the 180 kW IT load | 4 | 5 | 20 (Critical) | Two UPS units, A/B feeds | Resize so either side carries the full load | High |
+| R-03 | Power | Only one utility feed | 3 | 5 | 15 (Critical) | Generator | Add a second feed or a backup site | High |
 | R-04 | Power | Servers are single-corded, so A/B power gives no real backup. UPS runtime isn't documented | 3 | 4 | 12 (High) | Two PDUs per row | Rack-level transfer switches now, dual power supplies later | Medium |
 | R-05 | Operational | No spare parts on site (UPS parts take a day, CRAC compressor parts take 48-72 h) | 3 | 4 | 12 (High) | Vendor contract | Stock a spare UPS module and compressor kit | Medium |
 | R-06 | Cooling | Rows 5-8 have no containment; the 75°F average inlet is only 5.6°F under the 80.6°F limit and can hide hot spots | 4 | 3 | 12 (High) | Containment on rows 1-4 | Extend containment, add blanking panels and sensors | Medium |
-| R-07 | Network | One internet provider, no BGP | 3 | 5 | 15 (Critical)[^4] | None | Second provider on a separate path with BGP | Medium |
+| R-07 | Network | One internet provider, no BGP | 3 | 5 | 15 (Critical) | None | Second provider on a separate path with BGP | Medium |
 | R-08 | Network | One firewall, no HA | 2 | 5 | 10 (High) | None | Add a second firewall in HA | Medium |
-| R-09 | Network | iDRAC cards use the default `root`/`calvin` login plus a weak `svc-monitor` password | 5 | 5 | 25 (Critical)[^5] | None | Change both passwords now | Low |
-| R-10 | Network | iDRAC is on the production network with IPMI over LAN and SNMP v1 ("public") enabled | 4 | 5 | 20 (Critical)[^6] | None | Own management network behind a firewall; turn off IPMI over LAN; use SNMPv3 | Low |
-| R-11 | Network | iDRAC firmware is 4 years old (2.10.10.10; current is 6.10.30.20) | 4 | 4 | 16 (Critical)[^7] | None | Upgrade firmware and review it quarterly | Low |
+| R-09 | Network | iDRAC cards use the default `root`/`calvin` login plus a weak `svc-monitor` password | 5 | 5 | 25 (Critical) | None | Change both passwords now | Low |
+| R-10 | Network | iDRAC is on the production network with IPMI over LAN and SNMP v1 ("public") enabled | 4 | 5 | 20 (Critical) | None | Own management network behind a firewall; turn off IPMI over LAN; use SNMPv3 | Low |
+| R-11 | Network | iDRAC firmware is 4 years old (2.10.10.10; current is 6.10.30.20) | 4 | 4 | 16 (Critical) | None | Upgrade firmware and review it quarterly | Low |
 | R-12 | Physical | No cameras in the server room, no rack doors, any badged employee can escort visitors, and no media destruction log | 3 | 4 | 12 (High) | Badge + PIN, mantrap, entrance cameras | Cameras, lockable racks, trained escorts only, destruction log | Medium |
-| R-13 | Operational | Staff on site only 7 AM-7 PM weekdays (60 of 168 hours); after hours depends on a 4-hour vendor response | 4 | 4 | 16 (Critical)[^8] | Vendor paged by alarms | 24/7 NOC or remote hands plus an on-call engineer | High |
+| R-13 | Operational | Staff on site only 7 AM-7 PM weekdays (60 of 168 hours); after hours depends on a 4-hour vendor response | 4 | 4 | 16 (Critical) | Vendor paged by alarms | 24/7 NOC or remote hands plus an on-call engineer | High |
 
 [^1]: **R-01:** Power fails and the generator is asked to carry 153% of its rating. It trips, or operators have to shut down cooling (servers overheat) or IT (banking goes offline).
 [^2]: **R-02:** One UPS fails and the other has to carry about 225% of its rating. It overloads, and the next power dip drops the servers.
