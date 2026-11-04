@@ -91,9 +91,9 @@ Gaps 1 and 2 block Tier II. Gap 3 is the main barrier to Tier III.
 
 Availability = MTBF ÷ (MTBF + MTTR). MTTR = response time + wait for parts + install time, blended by on-site hours (35.7% of the week) and after hours (64.3%). I picked the two top power risks (R-01 generator, R-02 UPS) and the compressor part of R-05 for cooling (R-06 is an airflow problem with no MTBF).
 
-- **UPS (R-02):** MTBF is 250,000 h (Riello UPS says that's typical for an online UPS). MTTR is 0.5 + 24 + 3 = 27.5 h on-site and 4 + 48 + 3 = 55 h after hours, which blends to **45.4 h** (install times are my assumption). Availability = **99.9818%**, about 1.59 h of downtime a year. That beats Tier I and II and is just under Tier III.
-- **Generator (R-01):** MTBF is 10,000 h and MTTR is 48 h (**both my assumptions**, since the survey doesn't give them). Availability = **99.522%**, about 41.8 h a year. That's below Tier I. More important, even a healthy generator can't carry the load.
-- **CRAC compressor (R-05):** MTBF is 60,000 h (**my assumption**). MTTR is 2.75 h response + 60 h parts + 6 h install = **68.8 h**. Availability = **99.8855%** per unit, about 10 h a year. That meets Tier I and II but not III. The cooling has plenty of spare capacity (about 150 tons vs. roughly 51 tons needed), so this risk is moderate.
+- **UPS (R-02):** MTBF is 250,000 h. MTTR is 0.5 + 24 + 3 = 27.5 h on-site and 4 + 48 + 3 = 55 h after hours, which blends to **45.4 h**. Availability = **99.9818%**, about 1.59 h of downtime a year. That beats Tier I and II and is just under Tier III.
+- **Generator (R-01):** MTBF is 10,000 h and MTTR is 48 h. Availability = **99.522%**, about 41.8 h a year. That's below Tier I. More important, even a healthy generator can't carry the load.
+- **CRAC compressor (R-05):** MTBF is 60,000 h. MTTR is 2.75 h response + 60 h parts + 6 h install = **68.8 h**. Availability = **99.8855%** per unit, about 10 h a year. That meets Tier I and II but not III. The cooling has plenty of spare capacity, so this risk is moderate.
 
 | Component | MTBF (h) | MTTR (h) | Availability | Downtime/yr | vs. Tier I (99.671%) | vs. Tier III (99.982%) |
 |---|---|---|---|---|---|---|
