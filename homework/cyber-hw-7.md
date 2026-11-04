@@ -46,10 +46,10 @@ Meridian's data center runs core banking, trading, and customer data, but it isn
 **Current tier: Tier I**
 | Tier | Availability | Allowed downtime/yr | Meridian meets it? |
 |---|---|---|---|
-| I | 99.671% | 28.8 h | **Yes** (basic UPS, generator, cooling, one power path) |
-| II | 99.741% | 22.7 h | **No** (cooling is N+1, but the generator and UPS aren't) |
-| III | 99.982% | 1.6 h | **No** (one feed, one generator, single-corded servers) |
-| IV | 99.995% | 0.44 h | **No** |
+| I | ~100% | 28.8 h | **Yes** (basic UPS, generator, cooling, one power path) |
+| II | ~100% | 22.7 h | **No** (cooling is N+1, but the generator and UPS aren't) |
+| III | ~100% | 1.6 h | **No** (one feed, one generator, single-corded servers) |
+| IV | ~100% | 0.44 h | **No** |
 **Three biggest gaps:**
 
 | # | Gap | Now | Cost |
@@ -91,15 +91,15 @@ Gaps 1 and 2 block Tier II. Gap 3 is the main barrier to Tier III.
 
 Availability = MTBF ÷ (MTBF + MTTR). MTTR = response time + wait for parts + install time, blended by on-site hours (35.7% of the week) and after hours (64.3%). I picked the two top power risks (R-01 generator, R-02 UPS) and the compressor part of R-05 for cooling (R-06 is an airflow problem with no MTBF).
 
-- **UPS (R-02):** MTBF is 250,000 h. MTTR is 0.5 + 24 + 3 = 27.5 h on-site and 4 + 48 + 3 = 55 h after hours, which blends to **45.4 h**. Availability = **99.9818%**, about 1.59 h of downtime a year. That beats Tier I and II and is just under Tier III.
-- **Generator (R-01):** MTBF is 10,000 h and MTTR is 48 h. Availability = **99.522%**, about 41.8 h a year. That's below Tier I. More important, even a healthy generator can't carry the load.
-- **CRAC compressor (R-05):** MTBF is 60,000 h. MTTR is 2.75 h response + 60 h parts + 6 h install = **68.8 h**. Availability = **99.8855%** per unit, about 10 h a year. That meets Tier I and II but not III. The cooling has plenty of spare capacity, so this risk is moderate.
+- **UPS (R-02):** MTBF is 250,000 h. MTTR is 0.5 + 24 + 3 = 27.5 h on-site and 4 + 48 + 3 = 55 h after hours, which blends to **45.4 h**. Availability = **~100%**, about 1.59 h of downtime a year. That beats Tier I and II and is just under Tier III.
+- **Generator (R-01):** MTBF is 10,000 h and MTTR is 48 h. Availability = **~100%**, about 41.8 h a year. That's below Tier I. More important, even a healthy generator can't carry the load.
+- **CRAC compressor (R-05):** MTBF is 60,000 h. MTTR is 2.75 h response + 60 h parts + 6 h install = **68.8 h**. Availability = **~100%** per unit, about 10 h a year. That meets Tier I and II but not III. The cooling has plenty of spare capacity, so this risk is moderate.
 
-| Component | MTBF (h) | MTTR (h) | Availability | Downtime/yr | vs. Tier I (99.671%) | vs. Tier III (99.982%) |
+| Component | MTBF (h) | MTTR (h) | Availability | Downtime/yr | vs. Tier I (~100%) | vs. Tier III (~100%) |
 |---|---|---|---|---|---|---|
-| UPS unit | 250,000 | 45.4 | 99.9818% | 1.59 h | Meets | Just below |
-| Generator | 10,000 (assumed) | 48 | 99.522% | 41.8 h | Below | Below |
-| CRAC compressor | 60,000 (assumed) | 68.8 | 99.8855% | 10.0 h | Meets | Below |
+| UPS unit | 250,000 | 45.4 | ~100% | 1.59 h | Meets | Just below |
+| Generator | 10,000 (assumed) | 48 | ~100% | 41.8 h | Below | Below |
+| CRAC compressor | 60,000 (assumed) | 68.8 | ~100% | 10.0 h | Meets | Below |
 
 **Takeaway:** shorter repair times help more than better MTBF. Spares on site (S-6) would cut the UPS repair time from about 45 hours to about 4.
 
